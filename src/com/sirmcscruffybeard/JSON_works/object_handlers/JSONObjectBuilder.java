@@ -46,22 +46,22 @@ public class JSONObjectBuilder {
 		return key + COLON + value + COMMA + LINE;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 
-		final String END = Parts.OBJ_END.toString();
-
 		String[] keys = new String[map.size()];
 
-		map.keySet().toArray(keys);
+		keys = map.keySet().toArray(keys);
 
 		for (int i = 0; i < map.size() - 1; i++) {
 
 			JSONObject += this.prepLine(keys[i], map.get(keys[i]));
 		}
 
-		JSONObject += keys[map.size()-1] + COLON + map.get(keys[map.size()-1]) + END;
+		JSONObject += keys[map.size()-1] + COLON + map.get(keys[map.size()-1]) + Parts.OBJ_END.toString();
 
-				return this.JSONObject;
+		return this.JSONObject;
 	}
 }
