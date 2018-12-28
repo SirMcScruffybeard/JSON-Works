@@ -7,7 +7,7 @@ import com.sirmcscruffybeard.JSON_works.string_handlers.Parts;
 /********************************************************************
  * ArrayBuilder
  * 
- * This class is used to gather up items to be put into a JSON Array.
+ * This class creates a JSON array
  * 
  * Stores the items in an Array List. Processes the Array List into 
  * a JSON Array
@@ -16,7 +16,7 @@ import com.sirmcscruffybeard.JSON_works.string_handlers.Parts;
 ********************************************************************/
 public class JSONArrayBuilder {
 
-	private ArrayList<Object> arrayList = null;
+	private ArrayList<Object> arrayList = new ArrayList<>();
 	
 	private String JSONArray = Parts.ARR_START.toString();
 	
@@ -33,7 +33,7 @@ public class JSONArrayBuilder {
 	***********************************************/
 	public JSONArrayBuilder() {
 
-		this.setNewArrayList();
+		
 	}
 
 	/**************************************************************
@@ -61,8 +61,6 @@ public class JSONArrayBuilder {
 	****************************************************************/
 	public JSONArrayBuilder(Object inObject) {
 
-		this.setNewArrayList();
-
 		this.add(inObject);
 	}
 	
@@ -77,17 +75,8 @@ public class JSONArrayBuilder {
 	**************************************************************************************/
 	public JSONArrayBuilder(Object[] inArray) {
 
-		this.setNewArrayList();
-
-		this.addArray(inArray);
+		this.arrayList = this.arrayToArrayList(inArray);
 	}
-
-	/**********************************************************************
-	 * setNewArrayList()
-	 * 
-	 * Sets the class field ArrayList<Object> arrayList to a new ArrayLIst
-	**********************************************************************/
-	private void setNewArrayList() {this.arrayList =  new ArrayList<>();}
 
 	/**********************************************************************
 	 * add(Object inObject)
@@ -99,19 +88,24 @@ public class JSONArrayBuilder {
 	public void add(Object inObject) {arrayList.add(inObject);}
 
 	/**********************************************************************
-	 * addArray(Object[] inArray)
+	 * arrayToArrayList(Object[] inArray)
 	 * 
 	 * @param Object[] inArray
 	 * 
-	 * Adds the passed array to the Array List one object at a time using
-	 * a for loop
+	 * @return ArrayList<Object>
+	 * 
+	 * Converts an array into an ArrayList<Object>
 	**********************************************************************/
-	public void addArray(Object[] inArray) {
+	public ArrayList<Object> arrayToArrayList(Object[] inArray) {
+		
+		ArrayList<Object> newAList= new ArrayList<>();
+		
+		for(int i = 0; i < inArray.length; i++ ) {
 
-		for(int i = 0; i < inArray.length; i++) {
-
-			arrayList.add(inArray[i]);
+			newAList.add(inArray[i]);
 		}
+		
+		return newAList;
 	}
 
 	/**********************************************************************
@@ -121,6 +115,13 @@ public class JSONArrayBuilder {
 	**********************************************************************/
 	public ArrayList<Object> getArrayList() {return this.arrayList;}
 	
+	/**********************************************************************
+	 * toString()
+	 * 
+	 * @return String JSONArray
+	 * 
+	 * Builds and returns a complete JSON array String
+	**********************************************************************/
 	@Override
 	public String toString() {
 		
