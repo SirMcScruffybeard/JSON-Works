@@ -1,4 +1,4 @@
-package com.sirmcscruffybeard.JSON_works.parts;
+package com.sirmcscruffybeard.JSONWorks.parts;
 
 public enum Parts {
 

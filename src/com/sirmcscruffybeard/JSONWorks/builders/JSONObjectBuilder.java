@@ -1,8 +1,9 @@
-package com.sirmcscruffybeard.JSON_works.builders;
+package com.sirmcscruffybeard.JSONWorks.builders;
 
 import java.util.Map;
 
-import com.sirmcscruffybeard.JSON_works.parts.Parts;
+import com.sirmcscruffybeard.JSONWorks.parts.JSONMap;
+import com.sirmcscruffybeard.JSONWorks.parts.Parts;
 
 public class JSONObjectBuilder {
 

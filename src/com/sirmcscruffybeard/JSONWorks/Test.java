@@ -1,5 +1,7 @@
-import com.sirmcscruffybeard.JSON_works.builders.JSONArrayBuilder;
-import com.sirmcscruffybeard.JSON_works.builders.JSONObjectBuilder;
+package com.sirmcscruffybeard.JSONWorks;
+
+import com.sirmcscruffybeard.JSONWorks.builders.JSONArrayBuilder;
+import com.sirmcscruffybeard.JSONWorks.builders.JSONObjectBuilder;
 
 public class Test {
 

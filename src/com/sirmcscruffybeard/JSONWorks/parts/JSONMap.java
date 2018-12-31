@@ -1,17 +1,15 @@
 /**********************************************************************************
  * JSONMap
  * 
- * A Linked Hash Map to hold items for the JSONArrayBuilder and JSONObject Builder
+ * A Linked Hash Map that holds JSON items
  * 
  * @author SirMcScruffyBeard
  **********************************************************************************/
 
-package com.sirmcscruffybeard.JSON_works.builders;
+package com.sirmcscruffybeard.JSONWorks.parts;
 
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.sirmcscruffybeard.JSON_works.parts.Parts;
 
 @SuppressWarnings("serial")
 public class JSONMap extends LinkedHashMap<String, String> {
